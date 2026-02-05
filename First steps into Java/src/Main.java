@@ -66,12 +66,30 @@ public class Main {
         }
         return max;
     }
+    public Student findlow (){
+        int lowScore=1000000;
+        int counter=0;
+        Student low=null;
+        for (counter=0; counter<myClass.size(); counter++){
+            Student s = myClass.get(counter);
+
+            if (s.getScore()<lowScore){
+                low=s;
+                lowScore=s.getScore();
+
+            }
+        }
+        return low;
+    }
     private void doStuff(){
         enterClassDetails();
 
         Student maxScorer= findMax();
+        Student lowScorer= findlow();
 
         System.out.println("The heighst score was " + maxScorer.toString());
+        System.out.println("The Lowest score was " + lowScorer.toString());
+
     }
 
 
